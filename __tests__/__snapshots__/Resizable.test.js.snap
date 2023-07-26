@@ -3,6 +3,7 @@
 exports[`render Resizable snapshot default props 1`] = `
 <div
   className="test-classname react-resizable"
+  direction="ltr"
   style={
     {
       "height": "50px",

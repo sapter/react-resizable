@@ -22,6 +22,7 @@ describe('render Resizable', () => {
     resizeHandles: ['se', 'e'],
     transformScale: 1,
     width: 50,
+    direction: 'ltr',
   };
   const userChildren = <span className={'children'} />;
   const resizableBoxChildren =  <div style={{width: '50px', height: '50px'}}>{userChildren}</div>;
@@ -121,7 +122,7 @@ describe('render Resizable', () => {
 
     test('none of these props leak down to the child', () => {
       const element = shallow(<Resizable {...allProps}><div className="foo" /></Resizable>);
-      expect(Object.keys(element.find('.foo').props())).toEqual(['className', 'children']);
+      expect(Object.keys(element.find('.foo').props())).toEqual(['className', 'direction', 'children']);
     });
 
     test('className is constructed properly', () => {
